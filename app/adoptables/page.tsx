@@ -22,7 +22,7 @@ export default function AdoptablesPage() {
           <Card key={dog.id} className="overflow-hidden card-hover">
             <div className="relative aspect-[4/3]">
               <Image
-                src={dog.image}
+                src={dog.images[0]}
                 alt={dog.name}
                 fill
                 className="object-cover"
