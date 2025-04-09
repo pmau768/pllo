@@ -8,12 +8,11 @@ export default function DogProfilePage({ params }: { params: { id: string } }) {
   const dog = adoptables.find((d) => d.id === params.id);
   if (!dog) return notFound();
 
-
   return (
     <div className="section-container">
       <div className="grid md:grid-cols-2 gap-12 items-start">
         <Image
-          src={dog.image}
+          src={dog.images[0]}
           alt={dog.name}
           width={600}
           height={400}
@@ -42,6 +41,6 @@ export default function DogProfilePage({ params }: { params: { id: string } }) {
 // This tells Next.js which paths to pre-render
 export function generateStaticParams() {
   return adoptables.map((dog) => ({
-    id: dog.id, // Use the ID directly - it's already a string in the data
+    id: dog.id,
   }))
 }
